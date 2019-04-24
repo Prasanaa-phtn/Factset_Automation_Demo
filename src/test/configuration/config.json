@@ -1,0 +1,10 @@
+config{
+ webPortalDev{
+  "featureDataFile": "src/test/resources/testData/WebFeatureData.xlsx",
+  "baseUri": "https://developer.factset.com/"
+ },
+ webPortalStg{
+  "featureDataFile": "src/test/resources/testData/WebFeatureData.xlsx",
+  "baseUri": "https://developer.factset.com/"
+ }
+}
