@@ -54,4 +54,14 @@ public class WebPortal implements FactsetPlatform {
         // TODO Auto-generated method stub
         
     }
+    @Override
+    public void enterEmailAndPassword(String email, String password) {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public void validateUnsuccessfulLogin(String error) {
+        // TODO Auto-generated method stub
+        
+    }
 }

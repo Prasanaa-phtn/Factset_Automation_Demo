@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 import org.json.simple.parser.ParseException;
 
-import helpers.Platform;
 import helpers.PlatformHelper;
 import platforms.FactsetPlatform;
 import helpers.DataHelper;
