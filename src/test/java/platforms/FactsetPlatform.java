@@ -1,4 +1,7 @@
 package platforms;
+
+import java.io.File;
+
 public interface FactsetPlatform {
 
     void launch();

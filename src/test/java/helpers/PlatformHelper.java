@@ -1,29 +1,30 @@
 package helpers;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
+
+import org.json.simple.parser.ParseException;
+
+import platforms.FactsetPlatform;
+import platforms.WebPortal;
 
 public class PlatformHelper {
 
-    private static HashMap<Platform, HigiPlatform> platforms = new HashMap<>();
-
-    public static <T extends Platform> T getPlatformInstance(Platform type) {
-        if (!platforms.containsKey(type)) {
-            Platform platform;
+    public static FactsetPlatform getPlatformInstance(String type) {
+        
+        FactsetPlatform platform;
             switch (type) {
-            case WEB_PORTAL:
-                platform = new WebPortalPlatform();
+            case "webPortal_Dev":
+                platform = new WebPortal();
                 break;
             default:
                 throw new RuntimeException("Invalid platform");
             }
-
-            platforms.put(type, platform);
-        }
-
-        return (T) platforms.get(type);
+            return platform;
     }
 
-    public static <T extends Platform> T getCurrentPlatform() {
+    public static FactsetPlatform getCurrentPlatform() throws FileNotFoundException, IOException, ParseException {
         return PlatformHelper.getPlatformInstance(ConfigurationHelper.getPlatform());
     }
 

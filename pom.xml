@@ -42,18 +42,23 @@
 			<version>3.14.0</version>
 		</dependency>
 		<dependency>
-            <groupId>org.apache.maven.plugins</groupId>
+			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-compiler-plugin</artifactId>
 			<version>3.6.1</version>
 			<type>maven-plugin</type>
-        </dependency>
+		</dependency>
 		<dependency>
-	        <groupId>com.vimalselvam</groupId>
-	        <artifactId>cucumber-extentsreport</artifactId>
-	        <version>3.0.2</version>
-        </dependency>
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -83,5 +88,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
 </project>

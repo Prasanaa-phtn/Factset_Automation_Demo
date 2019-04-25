@@ -1,19 +1,25 @@
-package step_definitions;
+package stepDefinitions;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
+
+import org.json.simple.parser.ParseException;
+
 import helpers.Platform;
 import helpers.PlatformHelper;
+import platforms.FactsetPlatform;
 import helpers.DataHelper;
 
-public adssa abstract class AbstractStepDefinitions {
+public abstract class AbstractStepDefinition {
 
     private HashMap<String, String> data;
 
     private HashMap<String, String> globalData;
 
-    protected Platform platform;
+    protected FactsetPlatform platform;
 
-    public AbstractStepDefinitions() {
+    public AbstractStepDefinition() throws FileNotFoundException, IOException, ParseException {
 
         data = DataHelper.getCurrentData();
 

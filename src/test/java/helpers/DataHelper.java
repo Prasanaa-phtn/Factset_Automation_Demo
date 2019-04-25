@@ -29,7 +29,7 @@ public class DataHelper {
 	        data = new HashMap<>();
             try {
                 DataFormatter formatter = new DataFormatter();
-                FileInputStream fs = new FileInputStream(ConfigurationHelper.getfeatureDataFile());
+                FileInputStream fs = new FileInputStream(ConfigurationHelper.getFeatureFile());
                 XSSFWorkbook workbook = new XSSFWorkbook(fs);
                 int numSheets = workbook.getNumberOfSheets();
                 for (int sheetIndex = 1; sheetIndex < numSheets; sheetIndex++) {

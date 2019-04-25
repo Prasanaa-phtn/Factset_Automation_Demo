@@ -1,15 +1,16 @@
 package platforms;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import exceptions.HigiException;
 import helpers.ConfigurationHelper;
 
 public class WebPortal implements FactsetPlatform {
     private WebDriver driver;
-    public void launch() throws HigiException {
+    public void launch() {
         if (driver == null) {
             System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver_70v");
 
@@ -20,7 +21,37 @@ public class WebPortal implements FactsetPlatform {
             driver = new ChromeDriver(options);
 
             driver.manage().deleteAllCookies();
-            driver.get(ConfigurationHelper.getWebPortalEnvironment().getBaseUri());
+            driver.get(ConfigurationHelper.getBaseUri());
         }
+    }
+    @Override
+    public void logOut() {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public File takeScreenshot() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    @Override
+    public void navigateToLogin() {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public void login(String username, String password) {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public void validateLogIn() {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public void validateLogOut() {
+        // TODO Auto-generated method stub
+        
     }
 }
