@@ -4,22 +4,22 @@ import java.io.File;
 
 public interface FactsetPlatform {
 
-    void launch();
+    void launch() throws Exception;
 
-    void logOut();
+    void logOut() throws Exception;;
 
-    File takeScreenshot();
+    File takeScreenshot() throws Exception;;
 
-    void navigateToLogin();
+    void navigateToLogin() throws Exception;;
 
-    void login(String username, String password);
+    void login() throws Exception;;
 
-    void validateLogIn();
+    void validateLogIn() throws Exception;;
 
-    void validateLogOut();
+    void validateLogOut() throws Exception;;
     
-    void enterEmailAndPassword(String email, String password);
+    void enterEmailAndPassword(String email, String password) throws Exception;;
     
-    void validateUnsuccessfulLogin(String error);
+    void validateUnsuccessfulLogin(String error) throws Exception;;
 
 }

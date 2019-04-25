@@ -14,12 +14,12 @@ public class CommonSteps extends AbstractStepDefinition {
     }
     
     @Given("Factset application is launched")
-    public void launch() {
+    public void launch() throws Exception {
         platform.launch();
     }
 
     @When("user navigates to Login")
-    public void navigateToLogin() {
+    public void navigateToLogin() throws Exception {
         platform.navigateToLogin();
     }
 }

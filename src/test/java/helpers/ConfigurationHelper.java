@@ -16,23 +16,36 @@ public class ConfigurationHelper {
     
     private static JSONObject platformObject = null;
     public static String getPlatform() throws FileNotFoundException, IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src/test/configuration/Run.Config"));
-        JSONObject jsonObject = (JSONObject) obj;
-        platformObject = (JSONObject) jsonObject.get("platform");
+    	getPlatformObject();
         String platformName = platformObject.toString();
         System.out.println("Platform name: " + platformName);
         return platformName;
     }
     
-    public static String getFeatureFile() {
+    public static String getFeatureFile() throws FileNotFoundException, IOException, ParseException {
+    	getPlatformObject();
         String featureFile = (String) platformObject.get("featureFile");
         return featureFile;
     }
     
-    public static String getBaseUri() {
+    public static String getBaseUri() throws FileNotFoundException, IOException, ParseException {
+    	getPlatformObject();
         String baseUri = (String) platformObject.get("baseUri");
         return baseUri;
+    }
+    
+    private static void getPlatformObject() throws FileNotFoundException, IOException, ParseException {
+    	if (platformObject == null) {
+        	platformObject = getJson();
+        }
+    }
+    
+    private static JSONObject getJson() throws FileNotFoundException, IOException, ParseException {
+    	JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader("src/test/configuration/Config.json"));
+        JSONObject jsonObject = (JSONObject) obj;
+        platformObject = (JSONObject) jsonObject.get("platform");
+        return platformObject;
     }
     
 }

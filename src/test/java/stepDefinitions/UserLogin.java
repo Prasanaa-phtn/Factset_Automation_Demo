@@ -15,12 +15,12 @@ public class UserLogin extends AbstractStepDefinition {
     }
 
     @When("user enters email (.*) and password (.*)")
-    public void enterEmailAndPassword(String email, String password) {
+    public void enterEmailAndPassword(String email, String password) throws Exception {
         platform.enterEmailAndPassword(email, password);
     }
 
     @When("user validates the error message (.*)")
-    public void validateUnsuccessfulLogin(String errormessage) {
+    public void validateUnsuccessfulLogin(String errormessage) throws Exception {
         platform.validateUnsuccessfulLogin(errormessage);
     }
 
