@@ -15,7 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import helpers.ConfigurationHelper;
 
 public class WebPortal implements FactsetPlatform {
-	private RemoteWebDriver driver;
+	private WebDriver driver;
 	private Properties locatorPool = null;
 
 //	public void launch() throws Exception {
@@ -37,35 +37,36 @@ public class WebPortal implements FactsetPlatform {
 //			}
 	public void launch() throws Exception {
 		try {
-			FileReader reader = new FileReader("web_pageobjects.properties");
+			FileReader reader = new FileReader("src/test/resources/pageobjects/web_pageobjects.properties");
 			locatorPool = new Properties();
 			locatorPool.load(reader);
 			if (driver == null) {
-//            System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver_70v");
-//
-//
-//            ChromeOptions options = new ChromeOptions();
-//            options.addArguments("start-maximized");
-//            options.addArguments("disable-infobars");
-//            driver = new ChromeDriver(options);
-//
-//            driver.manage().deleteAllCookies();
-//            driver.get(ConfigurationHelper.getWebPortalEnvironment().getBaseUri());
-				final String USERNAME = "prasanaa1";
-				final String AUTOMATE_KEY = "RGxpKLxKvJiLsC11Ty67";
-				final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-				DesiredCapabilities caps = new DesiredCapabilities();
-				caps.setCapability("browser", "Chrome");
-				caps.setCapability("browser_version", "74.0");
-				caps.setCapability("os", "Windows");
-				caps.setCapability("os_version", "10");
-				caps.setCapability("resolution", "1024x768");
+            System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver_70v");
 
-				driver = new RemoteWebDriver(new URL(URL), caps);
-				driver.get("http://www.google.com");
+
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized");
+            options.addArguments("disable-infobars");
+            driver = new ChromeDriver(options);
+
+            driver.manage().deleteAllCookies();
+            driver.get(ConfigurationHelper.getBaseUri());
+//				final String USERNAME = "prasanaa1";
+//				final String AUTOMATE_KEY = "RGxpKLxKvJiLsC11Ty67";
+//				final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+//				DesiredCapabilities caps = new DesiredCapabilities();
+//				caps.setCapability("browser", "Chrome");
+//				caps.setCapability("browser_version", "74.0");
+////				caps.setCapability("os", "Windows");
+////				caps.setCapability("os_version", "10");
+////				caps.setCapability("resolution", "1024x768");
+//
+//				driver = new RemoteWebDriver(new URL(URL), caps);
+//				driver.get("http://www.google.com");
 			}
 
 		} catch (Exception e) {
+		    e.printStackTrace();
 			throw new Exception("Unknown error while user tries to launch the factset application");
 		}
 	}
