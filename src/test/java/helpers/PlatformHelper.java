@@ -1,17 +1,14 @@
 package helpers;
 
-import modules.*;
-import modules.interfaces.HigiPlatform;
-
 import java.util.HashMap;
 
 public class PlatformHelper {
 
     private static HashMap<Platform, HigiPlatform> platforms = new HashMap<>();
 
-    public static <T extends HigiPlatform> T getPlatformInstance(Platform type) {
+    public static <T extends Platform> T getPlatformInstance(Platform type) {
         if (!platforms.containsKey(type)) {
-            HigiPlatform platform;
+            Platform platform;
             switch (type) {
             case WEB_PORTAL:
                 platform = new WebPortalPlatform();
@@ -26,7 +23,7 @@ public class PlatformHelper {
         return (T) platforms.get(type);
     }
 
-    public static <T extends HigiPlatform> T getCurrentPlatform() {
+    public static <T extends Platform> T getCurrentPlatform() {
         return PlatformHelper.getPlatformInstance(ConfigurationHelper.getPlatform());
     }
 

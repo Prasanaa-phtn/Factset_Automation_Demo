@@ -1,8 +1,5 @@
-import java.io.File;
-
-import exceptions.HigiException;
-
-public interface Platform {
+package platforms;
+public interface FactsetPlatform {
 
     void launch();
 
