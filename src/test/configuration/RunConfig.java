@@ -1,5 +1,6 @@
-package configuration;
+ package configuration;
 
+ 
 public class RunConfig {
 
     private String platform;

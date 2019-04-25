@@ -1,0 +1,11 @@
+{
+ "webPortal_Dev": [
+  "featureDataFile: src/test/resources/testData/WebFeatureData.xlsx",
+  "baseUri: https://developer.factset.com/"
+ ],
+ "webPortal_Stg":[
+  "featureDataFile: src/test/resources/testData/WebFeatureData.xlsx",
+  "baseUri: https://developer.factset.com/"
+ ]
+}
+
