@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features", plugin = {
-        "html:target/cucumber-html-report"}, tags = { "@smoke" })
+        "html:target/cucumber-html-report","com.cucumber.listener.ExtentCucumberFormatter:output/FactSet.html"}, tags = { "@smoke" })
 
 public class RunCukesTest {
 	

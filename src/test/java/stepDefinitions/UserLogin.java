@@ -14,14 +14,19 @@ public class UserLogin extends AbstractStepDefinition {
         super();
     }
 
-    @When("user enters email (.*) and password (.*)")
+    @When("^user enters email (.*) and password (.*)$")
     public void enterEmailAndPassword(String email, String password) throws Exception {
-        platform.enterEmailAndPassword(email, password);
+        platform.enterEmailAndPassword(email,password);
+    }
+    
+    @When("^user clicks login button$")
+    public void login() throws Exception {
+        platform.login();
     }
 
-    @When("user validates the error message (.*)")
-    public void validateUnsuccessfulLogin(String errormessage) throws Exception {
-        platform.validateUnsuccessfulLogin(errormessage);
+    @When("^user validates the error (.*)$")
+    public void validateUnsuccessfulLogin(String error) throws Exception {
+        platform.validateUnsuccessfulLogin(error);
     }
 
 }

@@ -16,6 +16,6 @@ public class Hooks {
 
     @After
     public void afterScenario(Scenario scenario) throws Exception {
-        
+    	PlatformHelper.getCurrentPlatform().logOut();
     }
 }
